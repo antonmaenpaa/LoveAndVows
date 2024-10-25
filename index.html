@@ -25,8 +25,9 @@
       loop
       playsInline
       controls
-      onloadeddata="handleVideoLoad()"
+      preload="metadata"
       class="video"
+      oncanplaythrough="handleVideoLoad()"
     >
       <source src="/public/IMG_0382.mov" type="video/mp4" />
       Your browser does not support the video tag.
