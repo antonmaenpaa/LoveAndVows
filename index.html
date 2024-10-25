@@ -37,11 +37,15 @@
     function handleVideoLoad() {
       const video = document.getElementById('video');
       const loader = document.getElementById('loader');
-      if (video) {
-        video.style.display = 'block'; // Show the video
-        loader.style.display = 'none'; // Hide the loader
-      }
+      video.style.display = 'block'; // Show the video
+      loader.style.display = 'none'; // Hide the loader
     }
+
+    // Fallback in case the video fails to load for any reason
+    document.getElementById('video').addEventListener('error', function() {
+      const loader = document.getElementById('loader');
+      loader.innerHTML = '<p class="poppins-regular"; style="color: black;">Failed to load video. Please refresh the page.</p>';
+    });
   </script>
 </body>
 </html>
