@@ -20,33 +20,28 @@
         <div class="heart"></div>
       </div>
       <video
-      id="video"
-      autoPlay
-      loop
-      playsInline
-      controls
-      preload="metadata"
-      class="video"
-      oncanplaythrough="handleVideoLoad()"
-    >
+        id="video"
+        autoPlay
+        loop
+        playsInline
+        controls
+        onloadeddata="handleVideoLoad()"
+        class="video"
+      >
       <source src="/public/IMG_0382.mov" type="video/mp4" />
-      Your browser does not support the video tag.
+        Your browser does not support the video tag.
     </video>
     </div>
   </main>
-  <script>
+  <script defer>
     function handleVideoLoad() {
       const video = document.getElementById('video');
       const loader = document.getElementById('loader');
-      video.style.display = 'block'; // Show the video
-      loader.style.display = 'none'; // Hide the loader
+      if (video) {
+        video.style.display = 'block'; // Show the video
+        loader.style.display = 'none'; // Hide the loader
+      }
     }
-
-    // Fallback in case the video fails to load for any reason
-    document.getElementById('video').addEventListener('error', function() {
-      const loader = document.getElementById('loader');
-      loader.innerHTML = '<p class="poppins-regular"; style="color: black;">Failed to load video. Please refresh the page.</p>';
-    });
   </script>
 </body>
 </html>
