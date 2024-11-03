@@ -18,7 +18,7 @@
       <h1>Tobias & Hanne</h1>
       <h3>Meet us in Mathildedal</h3>
     </Header>
-    <section class="video-container">
+    <section class="video-container" onclick="toggleVideoPlay()">
       <div class="loader" id="loader">
         <div class="heart"></div>
       </div>
@@ -43,6 +43,15 @@
   </main>
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
+      function toggleVideoPlay() {
+        const video = document.getElementById('video');
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+
       function handleVideoLoad() {
         const video = document.getElementById('video');
         const loader = document.getElementById('loader');
