@@ -28,10 +28,10 @@
         loop
         playsInline
         controls
-        onloadeddata="handleVideoLoad()"
+        oncanplay="handleVideoLoad()"
         class="video"
       >
-      <source src="/public/IMG_0382.mov" type="video/mp4" />
+      <source src="/public/wedding-vid.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     </section>
@@ -43,14 +43,18 @@
     <footer></footer>
   </main>
   <script defer>
-    function handleVideoLoad() {
-      const video = document.getElementById('video');
-      const loader = document.getElementById('loader');
-      if (video) {
-        video.style.display = 'block'; // Show the video
-        loader.style.display = 'none'; // Hide the loader
+    document.addEventListener('DOMContentLoaded', () => {
+      function handleVideoLoad() {
+        const video = document.getElementById('video');
+        const loader = document.getElementById('loader');
+        if (video) {
+          video.style.display = 'block'; // Show the video
+          loader.style.display = 'none'; // Hide the loader
+        }
       }
-    }
+      const video = document.getElementById('video');
+      if (video) video.oncanplay = handleVideoLoad;
+    });
   </script>
 </body>
 </html>
