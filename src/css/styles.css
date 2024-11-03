@@ -56,7 +56,6 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
   height: 100%;
 }
 
@@ -76,6 +75,11 @@ body {
   flex-direction: column;
   align-items: center;
   color: #d50000; /* Wedding-themed color */
+}
+
+.loader {
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .heart {

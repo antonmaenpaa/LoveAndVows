@@ -25,7 +25,6 @@
       <video
         id="video"
         autoPlay
-        loop
         playsInline
         controls
         oncanplay="handleVideoLoad()"
@@ -49,9 +48,13 @@
         const loader = document.getElementById('loader');
         if (video) {
           video.style.display = 'block'; // Show the video
-          loader.style.display = 'none'; // Hide the loader
+          loader.style.opacity = '0'; // Fade out the loader
+          setTimeout(() => {
+            loader.style.display = 'none'; // Remove the loader completely after transition
+          }, 300); // Match the transition duration
         }
       }
+
       const video = document.getElementById('video');
       if (video) video.oncanplay = handleVideoLoad;
     });
