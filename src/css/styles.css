@@ -44,10 +44,10 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1280px;
+  max-width: 900px;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 10rem;
 }
 
 .video-container {
@@ -130,7 +130,6 @@ section.content {
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-  max-width: 15rem;
   text-align: center;
 }
 
@@ -148,6 +147,18 @@ h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #d50000; /* Wedding-themed color */
+  transition: all 0.3s ease;
+  
+
+  &:hover {
+    color: white;
+    transform: scale(1);
+  }
 }
   
 @media (min-width: 640px) { /* sm breakpoint */
