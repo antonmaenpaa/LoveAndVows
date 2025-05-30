@@ -31,6 +31,10 @@ header h3 {
   margin: 0;
 }
 
+p, span, a {
+  font-size: 1.2rem;
+}
+
 body {
   margin: 0;
   height: 100%;
